@@ -3,6 +3,10 @@ var app = express();
 var restRouter = require('./routes/rest');
 var redirectRouter = require('./routes/redirect');
 var indexRouter = require("./routes/index");
+var mongoose = require('mongoose');
+
+mongoose.connect("mongodb://admin:admin@ds157469.mlab.com:57469/heroku_qljpmql9");
+
 
 var port = process.env.PORT || 3000;
 
