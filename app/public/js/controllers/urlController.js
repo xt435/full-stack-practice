@@ -1,6 +1,6 @@
 angular.module("tinyurlApp")
     .controller("urlController", ["$scope", "$http", "$routeParams", function ($scope, $http, $routeParams) {
-        $http.get("/api/tinyUrl_V2/urls/" + $routeParams.shortUrl)
+        $http.get("/api/tinyUrl_V3/urls/" + $routeParams.shortUrl)
             .success(function (data) {
                 $scope.longUrl = data.longUrl;
                 $scope.shortUrl = data.shortUrl;

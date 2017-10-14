@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000;
 
 app.use("/public", express.static(__dirname + "/public"));
 
-app.use("/api/tinyUrl_V2", restRouter);
+app.use("/api/tinyUrl_V3", restRouter);
 
 app.use("/", indexRouter);
 
