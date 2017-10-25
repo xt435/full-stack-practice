@@ -6,8 +6,6 @@ var host = process.env.REDIS_PORT_6379_TCP_ADDR;
 
 var redisClient = redis.createClient(port, host);
 
-var encode = [];
-
 var genCharArray = function (charA, charZ) {
     var arr = [];
     var i = charA.charCodeAt(0);
@@ -18,9 +16,10 @@ var genCharArray = function (charA, charZ) {
     return arr;
 };
 
-encode = encode.concat(genCharArray('A', 'Z'));
-encode = encode.concat(genCharArray('a', 'z'));
-encode = encode.concat(genCharArray('0', '9'));
+var charsAllows = [];
+charsAllows = charsAllows.concat(genCharArray('A', 'Z'));
+charsAllows = charsAllows.concat(genCharArray('a', 'z'));
+charsAllows = charsAllows.concat(genCharArray('0', '9'));
 
 var getShortUrl = function (longUrl, callback) {
     if (longUrl.indexOf('http') === -1) {
@@ -66,7 +65,7 @@ var generateShortUrl = function (callback) {
 var convertTo62 = function (num) {
     var result = "";
     do {
-        result = encode[num % 62] + result;
+        result = charsAllows[num % 62] + result;
         num = Math.floor(num / 62);
     } while (num);
     return result;

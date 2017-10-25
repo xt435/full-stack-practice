@@ -9,6 +9,8 @@ webservercontainer:
 
 tinyurlcontainer1:
   build: ./app
+  volumes:
+    - ./app:/app
   ports:
     - "3000"
   links:
@@ -16,6 +18,8 @@ tinyurlcontainer1:
 
 tinyurlcontainer2:
   build: ./app
+  volumes:
+    - ./app:/app
   ports:
     - "3000"
   links:
@@ -23,6 +27,8 @@ tinyurlcontainer2:
 
 tinyurlcontainer3:
   build: ./app
+  volumes:
+    - ./app:/app
   ports:
     - "3000"
   links:

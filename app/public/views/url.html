@@ -9,4 +9,25 @@
       <a ng-href="{{ shortUrl }}" target="_blank">{{ shortUrlToShow }}</a>
     </div>
   </div>
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">Total Clicks</div>
+        <h1 class="panel-body">{{ totalClicks }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Referrers
+      </div>
+      <div class="panel-body">
+        <canvas id="doughnut" class="chart chart-doughnut"
+          chart-data="doughnutData" chart-labels="doughnutLabels">
+        </canvas>
+      </div>
+    </div>
+  </div>
 </div>
